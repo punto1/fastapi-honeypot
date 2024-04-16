@@ -24,7 +24,7 @@ async def lifespan(app: FastAPI):
     print("Listening! (logprefix: %s)" %logprefix)
     yield
     with open("testruns.txt", "a") as outpf:
-        outpf.write("\n========\ntot. exec time on new db: %s\ntot. exec time on old db: %s\n" %(app.tot_exectime_new,  app.tot_exectim$
+        outpf.write("\n========\ntot. exec time on new db: %s\ntot. exec time on old db: %s\n" %(app.tot_exectime_new,  app.tot_exectime))
         outpf.write("nr calls: %s\n" %app.nr_calls)
         outpf.write("logging started at %s and ended at %s\n" %(logprefix, datetime.utcnow().strftime("%Y%m%d%H%M")))
         outpf.write("===\n\n")
